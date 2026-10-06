@@ -8,6 +8,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_executable(raytracer
     src/main.cpp
     src/color.cpp
+    src/interval.cpp
 )
 
 target_include_directories(raytracer PRIVATE
