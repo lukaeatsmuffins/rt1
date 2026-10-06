@@ -164,8 +164,7 @@ CMakeFiles/raytracer.dir/src/main.cpp.o: /home/luka/dev/rt1/src/main.cpp \
  /usr/include/c++/15/bits/basic_ios.tcc \
  /usr/include/c++/15/bits/ostream.tcc /usr/include/c++/15/istream \
  /usr/include/c++/15/bits/istream.tcc \
- /home/luka/dev/rt1/src/../include/color.h \
- /home/luka/dev/rt1/src/../include/vec3.h /usr/include/c++/15/cmath \
+ /home/luka/dev/rt1/src/../include/util.h /usr/include/c++/15/cmath \
  /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
@@ -188,5 +187,56 @@ CMakeFiles/raytracer.dir/src/main.cpp.o: /home/luka/dev/rt1/src/main.cpp \
  /usr/include/c++/15/tr1/modified_bessel_func.tcc \
  /usr/include/c++/15/tr1/poly_hermite.tcc \
  /usr/include/c++/15/tr1/poly_laguerre.tcc \
- /usr/include/c++/15/tr1/riemann_zeta.tcc \
- /home/luka/dev/rt1/src/../include/ray.h
+ /usr/include/c++/15/tr1/riemann_zeta.tcc /usr/include/c++/15/memory \
+ /usr/include/c++/15/bits/stl_tempbuf.h \
+ /usr/include/c++/15/bits/stl_uninitialized.h \
+ /usr/include/c++/15/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/15/bits/align.h /usr/include/c++/15/bits/unique_ptr.h \
+ /usr/include/c++/15/bits/shared_ptr.h \
+ /usr/include/c++/15/bits/shared_ptr_base.h \
+ /usr/include/c++/15/bits/allocated_ptr.h \
+ /usr/include/c++/15/ext/aligned_buffer.h \
+ /usr/include/c++/15/ext/concurrence.h \
+ /usr/include/c++/15/bits/shared_ptr_atomic.h \
+ /usr/include/c++/15/bits/atomic_base.h \
+ /usr/include/c++/15/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/15/bits/atomic_wait.h /usr/include/c++/15/cstdint \
+ /usr/lib/gcc/x86_64-linux-gnu/15/include/stdint.h /usr/include/stdint.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
+ /usr/include/c++/15/climits \
+ /usr/lib/gcc/x86_64-linux-gnu/15/include/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/15/include/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/uio_lim.h /usr/include/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+ /usr/include/linux/close_range.h /usr/include/syscall.h \
+ /usr/include/x86_64-linux-gnu/sys/syscall.h \
+ /usr/include/x86_64-linux-gnu/asm/unistd.h \
+ /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
+ /usr/include/x86_64-linux-gnu/bits/syscall.h \
+ /usr/include/c++/15/bits/std_mutex.h \
+ /usr/include/c++/15/backward/auto_ptr.h \
+ /usr/include/c++/15/bits/ranges_uninitialized.h \
+ /usr/include/c++/15/bits/ranges_algobase.h \
+ /usr/include/c++/15/pstl/glue_memory_defs.h \
+ /usr/include/c++/15/pstl/execution_defs.h \
+ /home/luka/dev/rt1/src/../include/color.h \
+ /home/luka/dev/rt1/src/../include/vec3.h \
+ /home/luka/dev/rt1/src/../include/ray.h \
+ /home/luka/dev/rt1/src/../include/hittable.h \
+ /home/luka/dev/rt1/src/../include/hittable_list.h \
+ /home/luka/dev/rt1/src/../include/hittable.h /usr/include/c++/15/vector \
+ /usr/include/c++/15/bits/stl_vector.h \
+ /usr/include/c++/15/bits/stl_bvector.h \
+ /usr/include/c++/15/bits/vector.tcc \
+ /home/luka/dev/rt1/src/../include/sphere.h
