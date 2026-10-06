@@ -1,3 +1,0 @@
-/home/luka/dev/rt1/build/CMakeFiles/raytracer.dir
-/home/luka/dev/rt1/build/CMakeFiles/edit_cache.dir
-/home/luka/dev/rt1/build/CMakeFiles/rebuild_cache.dir

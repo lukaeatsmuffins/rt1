@@ -1,1 +1,10 @@
 build/
+*.ppm
+
+# Local IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+
+# CMake-generated compilation database
+compile_commands.json
