@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/luka/dev/rt1/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
