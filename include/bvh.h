@@ -7,7 +7,6 @@
 #include "util.h"
 
 #include <algorithm>
-#include <iterator>
 #include <memory>
 
 class bvh_node : public hittable {
@@ -30,11 +29,11 @@ class bvh_node : public hittable {
 
     bvh_node(std::vector<shared_ptr<hittable>>& objects, size_t start, size_t end) {
         bbox = aabb::empty;
-        for (auto ii = start; ii < end; ++ii) {
-            bbox = aabb(bbox, objects[ii]->bounding_box());
-        }
+        for (size_t object_index=start; object_index < end; object_index++)
+            bbox = aabb(bbox, objects[object_index]->bounding_box());
 
-        int axis = bbox.longest_axis(); 
+        int axis = bbox.longest_axis();
+
 
         auto comparator = (axis == 0) ? box_x_compare
                         : (axis == 1) ? box_y_compare
@@ -59,6 +58,8 @@ class bvh_node : public hittable {
             left = make_shared<bvh_node>(objects, start, mid);
             right = make_shared<bvh_node>(objects, mid, end);
         }
+
+        bbox = aabb(left->bounding_box(), right->bounding_box());
     }
 
     aabb bounding_box() const override { return bbox; }
