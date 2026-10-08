@@ -7,10 +7,18 @@
 class sphere : public hittable {
   public:
     sphere(const point3& center, double radius, shared_ptr<material> mat_ptr)
-        : center(center, point3(0,0,0)), radius(std::fmax(0,radius)), mat_ptr(mat_ptr) {}
+        : center(center, point3(0,0,0)), radius(std::fmax(0,radius)), mat_ptr(mat_ptr) {
+            auto rvec = vec3(radius, radius, radius);
+            bbox = aabb(center - rvec, center + rvec);
+        }
 
     sphere(const point3& center1, const point3& center2, double radius, shared_ptr<material> mat_ptr)
-        : center(center1, center2-center1), radius(std::fmax(0,radius)), mat_ptr(mat_ptr) {}
+        : center(center1, center2-center1), radius(std::fmax(0,radius)), mat_ptr(mat_ptr) {
+            auto rvec = vec3(radius, radius, radius);
+            aabb bbox1(center1 - rvec, center1 + rvec);
+            aabb bbox2(center2 - rvec, center2 + rvec);
+            bbox = aabb(bbox1, bbox2);
+        }
 
     bool hit(const ray& r, interval ray_t, hit_record& rec) const override {
         // Time is between 0 and 1.
@@ -44,10 +52,13 @@ class sphere : public hittable {
         return true;
     }
 
+    aabb bounding_box() const override { return bbox; }
+
   private:
     ray center;
     double radius;
     shared_ptr<material> mat_ptr;
+    aabb bbox;
 };
 
 #endif
