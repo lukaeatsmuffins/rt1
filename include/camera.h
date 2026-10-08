@@ -180,7 +180,8 @@ class camera {
                                  + (pixel_delta_u * (i + offset.x()))
                                  + (pixel_delta_v * (j + offset.y()))
                                  - ray_origin;
-        return ray(ray_origin, ray_direction);
+        const double ray_time = random_double();
+        return ray(ray_origin, ray_direction, ray_time);
     }
 
     // Returns a random point in the camera defocus disk.
