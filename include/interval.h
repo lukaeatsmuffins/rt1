@@ -1,15 +1,16 @@
 #ifndef INTERVAL_H
 #define INTERVAL_H
 
+#include "util.h"
 #include <cmath>
 
 class interval {
   public:
     double min, max;
 
-    interval() : min(+infinity), max(-infinity) {} // Default interval is empty
+    constexpr interval() : min(+infinity), max(-infinity) {} // Default interval is empty
 
-    interval(double min, double max) : min(min), max(max) {}
+    constexpr interval(double min, double max) : min(min), max(max) {}
 
     // Interval that surrounds both a and b.
     interval(const interval& a, const interval& b) {
@@ -41,9 +42,9 @@ class interval {
     }
 
     static const interval empty, universe;
-    
-    private:
-    static constexpr double infinity = std::numeric_limits<double>::infinity();
 };
+
+inline constexpr interval interval::empty    = interval(+infinity, -infinity);
+inline constexpr interval interval::universe = interval(-infinity, +infinity);
 
 #endif

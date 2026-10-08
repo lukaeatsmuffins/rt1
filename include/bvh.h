@@ -58,8 +58,6 @@ class bvh_node : public hittable {
             left = make_shared<bvh_node>(objects, start, mid);
             right = make_shared<bvh_node>(objects, mid, end);
         }
-
-        bbox = aabb(left->bounding_box(), right->bounding_box());
     }
 
     aabb bounding_box() const override { return bbox; }
