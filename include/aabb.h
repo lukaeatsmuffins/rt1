@@ -10,7 +10,7 @@ class aabb {
 
     aabb() {}
 
-    aabb(const interval& x, const interval& y, const interval& z)
+    constexpr aabb(const interval& x, const interval& y, const interval& z)
       : x(x), y(y), z(z) {}
 
     aabb(const point3& a, const point3& b) {
@@ -68,7 +68,7 @@ class aabb {
 
 };
 
-const aabb aabb::empty = aabb(interval::empty, interval::empty, interval::empty);
-const aabb aabb::universe = aabb(interval::universe, interval::universe, interval::universe);
+inline constexpr aabb aabb::empty = aabb(interval::empty, interval::empty, interval::empty);
+inline constexpr aabb aabb::universe = aabb(interval::universe, interval::universe, interval::universe);
 
 #endif
