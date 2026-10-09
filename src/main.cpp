@@ -6,7 +6,45 @@
 #include "../include/bvh.h"
 
 
+void test_world();
+void spheres();
+void earth();
+
 int main() {
+    switch(3) {
+        case 1: test_world(); break;
+        case 2: spheres(); break;
+        case 3: earth(); break;
+    }
+}
+
+void spheres() {
+
+    hittable_list world;
+
+    auto checker = make_shared<checker_texture>(0.32, color(.2, .3, .1), color(.9, .9, .9));
+
+    world.add(make_shared<sphere>(point3(0,-10, 0), 10, make_shared<lambertian>(checker)));
+    world.add(make_shared<sphere>(point3(0, 10, 0), 10, make_shared<lambertian>(checker)));
+
+    camera cam;
+
+    cam.set_aspect_ratio(16.0 / 9.0);
+    cam.set_image_width(400);
+    cam.set_samples_per_pixel(100);
+    cam.set_max_depth(50);
+
+    cam.set_vfov(20);
+    cam.set_lookfrom(point3(13,2,3));
+    cam.set_lookat(point3(0,0,0));
+    cam.set_vup(vec3(0,1,0));
+
+    cam.set_defocus_angle(0);
+
+    cam.render(world);
+}
+
+void test_world() {
     // Image.
     const int image_width = 400;
     const double aspect_ratio = 16.0 / 9.0;
@@ -72,4 +110,26 @@ int main() {
     cam.set_defocus_angle(0.6);
     cam.set_focus_distance(10.0);
     cam.render(world);
+}
+
+void earth() {
+    auto earth_texture = make_shared<image_texture>("earthmap.jpg");
+    auto earth_surface = make_shared<lambertian>(earth_texture);
+    auto globe = make_shared<sphere>(point3(0,0,0), 2, earth_surface);
+
+    camera cam;
+
+    cam.set_aspect_ratio(16.0 / 9.0);
+    cam.set_image_width(400);
+    cam.set_samples_per_pixel(100);
+    cam.set_max_depth(50);
+
+    cam.set_vfov(20);
+    cam.set_lookfrom(point3(0,0,12));
+    cam.set_lookat(point3(0,0,0));
+    cam.set_vup(vec3(0,1,0));
+
+    cam.set_defocus_angle(0);
+
+    cam.render(hittable_list(globe));
 }

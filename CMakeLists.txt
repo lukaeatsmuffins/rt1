@@ -13,3 +13,6 @@ add_executable(raytracer
 target_include_directories(raytracer PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
+target_include_directories(raytracer PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/external
+)

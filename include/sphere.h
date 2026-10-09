@@ -47,12 +47,21 @@ class sphere : public hittable {
         rec.p = r.at(rec.t);
         auto outward_normal = (rec.p - pos) / radius;
         rec.set_face_normal(r, outward_normal);
+        get_sphere_uv(outward_normal, rec.u, rec.v);
         rec.mat_ptr = mat_ptr;
 
         return true;
     }
 
     aabb bounding_box() const override { return bbox; }
+
+  private:
+    static void get_sphere_uv(const point3& p, double& u, double& v) {
+        auto theta = std::acos(-p.y());
+        auto phi = std::atan2(-p.z(), p.x()) + pi;
+        u = phi / (2*pi);
+        v = theta / pi;
+    }
 
   private:
     ray center;
