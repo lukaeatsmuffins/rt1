@@ -9,12 +9,14 @@
 void test_world();
 void spheres();
 void earth();
+void perlin_spheres();
 
 int main() {
-    switch(3) {
+    switch(4) {
         case 1: test_world(); break;
         case 2: spheres(); break;
         case 3: earth(); break;
+        case 4: perlin_spheres(); break;
     }
 }
 
@@ -132,4 +134,28 @@ void earth() {
     cam.set_defocus_angle(0);
 
     cam.render(hittable_list(globe));
+}
+
+void perlin_spheres() {
+    hittable_list world;
+
+    auto pertext = make_shared<noise_texture>(4);
+    world.add(make_shared<sphere>(point3(0,-1000,0), 1000, make_shared<lambertian>(pertext)));
+    world.add(make_shared<sphere>(point3(0,2,0), 2, make_shared<lambertian>(pertext)));
+
+    camera cam;
+
+    cam.set_aspect_ratio(16.0 / 9.0);
+    cam.set_image_width(400);
+    cam.set_samples_per_pixel(100);
+    cam.set_max_depth(50);
+
+    cam.set_vfov(20);
+    cam.set_lookfrom(point3(13,2,3));
+    cam.set_lookat(point3(0,0,0));
+    cam.set_vup(vec3(0,1,0));
+
+    cam.set_defocus_angle(0);
+
+    cam.render(world);
 }
